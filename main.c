@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniprintf.h                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 14:16:27 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/17 14:52:29 by mabouce          ###   ########.fr       */
+/*   Created: 2019/01/17 13:01:25 by mabouce           #+#    #+#             */
+/*   Updated: 2019/01/17 14:41:47 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIPRINTF_H
-# define MINIPRINTF_H
-# include "libft.h"
-# include <stdarg.h>
+#include <stdio.h>
+#include "miniprintf.h"
 
-typedef struct				s_stru
+int		main(void)
 {
-	int						buff;
-	int						i;
-	int						j;
-	int						k;
-
-	char					*format;
-	char					*tmp;
-	char					*output;
-	char					*conv;
-	va_list					va;
-}							t_stru;
-
-int							miniprintf(const char *format, ...);
-
-#endif
+	miniprintf("mine: bidonjour%s", "\nlalala\n");
+	printf("\npf: bidou\n");
+}

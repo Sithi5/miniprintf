@@ -6,16 +6,16 @@
 #    By: rvalenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/18 15:40:32 by rvalenti          #+#    #+#              #
-#    Updated: 2019/01/16 14:11:26 by mabouce          ###   ########.fr        #
+#    Updated: 2019/01/17 13:01:02 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME		=		libftminiprintf.a
 SRCS		=		miniprintf.c			\
 
 LIBFT		=		libft/
 OBJ			=		$(SRCS:.c=.o)
 CC			=		gcc -Wall -Wextra -Werror
-NAME		=		libftminiprintf.a
 .PHONY		=		all $(NAME) $(OBJ) clean fclean re
 
 _UNDER=$'\x1b[4m$'
@@ -43,4 +43,6 @@ fclean:	clean
 re:	fclean all
 
 %.o: %.c
-	$(CC) -I $(LIBFT) -I includes/ -c $< -o $@
+	@$(CC) -I $(LIBFT) -I includes/ -c $< -o $@
+	@echo "$(_END)$(_GREEN)[OK]\t$(_UNDER)$(_YELLOW)	\
+	COMPILE :$(_END)$(_BOLD)$(_WHITE)\t$<"
