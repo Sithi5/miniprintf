@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:16:27 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/17 14:52:29 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/01/17 17:05:50 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,16 @@ typedef struct				s_stru
 }							t_stru;
 
 int							miniprintf(const char *format, ...);
+int							ft_is_conv(char c, t_stru *stru);
+
+char						*ft_char(t_stru *stru);
+char						*ft_string(t_stru *stru);
+char						*ft_ptr(t_stru *stru);
+char						*ft_int(t_stru *stru);
+char						*ft_fill_conv(t_stru *stru);
+char						*ft_fill_text(t_stru *stru);
+
+void						ft_error(t_stru *stru);
+void						ft_read_format(t_stru *stru);
 
 #endif

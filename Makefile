@@ -6,12 +6,16 @@
 #    By: rvalenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/18 15:40:32 by rvalenti          #+#    #+#              #
-#    Updated: 2019/01/17 13:01:02 by mabouce          ###   ########.fr        #
+#    Updated: 2019/01/17 17:12:25 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		libftminiprintf.a
 SRCS		=		miniprintf.c			\
+					ft_error.c				\
+					ft_fill.c				\
+					ft_csp.c				\
+					ft_diouxx.c				\
 
 LIBFT		=		libft/
 OBJ			=		$(SRCS:.c=.o)
@@ -27,7 +31,12 @@ _END=$'\x1b[0m$'
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	make -C $(LIBFT)
+	@echo "\n\n"
+	@echo "$(_WHITE)====================================================$(_END)"
+	@echo "$(_YELLOW)		COMPILING LIBFT$(_END)"
+	@echo "$(_WHITE)====================================================$(_END)"
+	@echo "\n\n"
+	@make -C $(LIBFT)
 	cp libft/libft.a $(NAME)
 	ar rcs $(NAME) $(OBJ)
 	@echo "$(_WHITE)$(NAME)\t$(_GREEN)[OK]$(_END)"

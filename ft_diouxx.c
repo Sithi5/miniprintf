@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   diouxX.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 17:12:52 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/17 17:29:14 by mabouce          ###   ########.fr       */
+/*   Created: 2019/01/17 16:50:23 by mabouce           #+#    #+#             */
+/*   Updated: 2019/01/17 17:38:09 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-int		main(void)
+char	*ft_int(t_stru *stru)
 {
-	miniprintf("testmoicamongars  |%i| |%d|  |%c| |%s|", 124758, -1245,  'a', "hihi");
-	return (0);
+	long long	i;
+	char		*tmp;
+
+	i = va_arg(stru->va, long long);
+	tmp = ft_lltoa(i);
+	return (tmp);
 }
