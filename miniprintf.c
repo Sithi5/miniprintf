@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 13:57:45 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/23 13:27:22 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/01/23 13:36:28 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_read_format(t_stru *stru)
 	stru->i = -1;
 	stru->j = 0;
 	if (!(stru->output = ft_strnew(0)))
-		ft_error_miniprintf(stru);
+		ft_error_miniprintf();
 	while (stru->format[++stru->i])
 	{
 		if (stru->format[stru->i] == '%')
@@ -58,11 +58,11 @@ int		miniprintf(const char *format, ...)
 	t_stru		*stru;
 
 	if (!(stru = (t_stru *)malloc(sizeof(t_stru))))
-		ft_error_miniprintf(stru);
+		ft_error_miniprintf();
 	ft_set_conv(stru);
 	va_start(stru->va, format);
 	if (!(stru->format = ft_strdup((char *)format)))
-		ft_error_miniprintf(stru);
+		ft_error_miniprintf();
 	ft_read_format(stru);
 	ft_putstr(stru->output);
 	ft_strdel(&(stru->format));

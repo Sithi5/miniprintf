@@ -6,7 +6,7 @@
 #    By: rvalenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/18 15:40:32 by rvalenti          #+#    #+#              #
-#    Updated: 2019/01/23 13:35:41 by mabouce          ###   ########.fr        #
+#    Updated: 2019/01/23 13:39:11 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,8 @@ $(NAME): $(OBJ)
 	@echo "$(_WHITE)====================================================$(_END)"
 	@echo "\n\n"
 	@make -C $(LIBFT)
-	cp ../libft/libft.a $(NAME)
-	ar rcs $(NAME) $(OBJ)
+	@cp $(LIBFT)/libft.a $(NAME)
+	@ar rcs $(NAME) $(OBJ)
 	@echo "$(_WHITE)$(NAME)\t$(_GREEN)[OK]$(_END)"
 
 clean:

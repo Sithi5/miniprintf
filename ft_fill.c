@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 15:46:42 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/23 12:44:08 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/01/23 13:36:40 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_fill_text(t_stru *stru)
 {
 	stru->k = 0;
 	if (!(stru->tmp = (char *)malloc(sizeof(char) * (stru->i - stru->j + 1))))
-		ft_error_miniprintf(stru);
+		ft_error_miniprintf();
 	while (stru->j < stru->i)
 	{
 		stru->tmp[stru->k] = stru->format[stru->j];
