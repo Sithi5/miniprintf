@@ -6,7 +6,7 @@
 #    By: rvalenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/18 15:40:32 by rvalenti          #+#    #+#              #
-#    Updated: 2019/01/23 13:26:07 by mabouce          ###   ########.fr        #
+#    Updated: 2019/01/23 13:35:41 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS		=		miniprintf.c			\
 					ft_csp.c				\
 					ft_diouxx.c				\
 
-LIBFT		=		../libft/
+LIBFT		=		libft/
 OBJ			=		$(SRCS:.c=.o)
 CC			=		gcc -Wall -Wextra -Werror
 .PHONY		=		all $(NAME) $(OBJ) clean fclean re
