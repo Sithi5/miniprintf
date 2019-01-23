@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:16:27 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/17 17:05:50 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/01/23 12:45:07 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char						*ft_int(t_stru *stru);
 char						*ft_fill_conv(t_stru *stru);
 char						*ft_fill_text(t_stru *stru);
 
-void						ft_error(t_stru *stru);
+void						ft_error_miniprintf(t_stru *stru);
 void						ft_read_format(t_stru *stru);
 
 #endif
