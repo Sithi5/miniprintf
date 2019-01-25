@@ -6,18 +6,21 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 15:46:42 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/23 13:36:40 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/01/25 13:57:15 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-char	*(*g_function[13])(t_stru *stru) = {ft_char, ft_string, ft_int, ft_int};
-
 char	*ft_fill_conv(t_stru *stru)
 {
 	int	i;
+	char *(*function[13])(t_stru *stru);
 
+	function[0] = ft_char;
+	function[1] = ft_string;
+	function[2] = ft_int;
+	function[3] = ft_int;
 	i = 0;
 	while (stru->conv[i])
 	{
@@ -25,7 +28,7 @@ char	*ft_fill_conv(t_stru *stru)
 			break ;
 		i++;
 	}
-	return (g_function[i](stru));
+	return (function[i](stru));
 }
 
 char	*ft_fill_text(t_stru *stru)
