@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_csp.c                                           :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 11:36:56 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/17 17:34:52 by mabouce          ###   ########.fr       */
+/*   Created: 2019/01/17 15:47:22 by mabouce           #+#    #+#             */
+/*   Updated: 2019/03/05 18:56:30 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-char	*ft_char(t_stru *stru)
+void	ft_error_miniprintf(t_stru *stru, int error)
 {
-	char	c;
-	char	*tmp;
-
-	tmp = ft_strnew(2);
-	c = va_arg(stru->va, int);
-	ft_memset((void *)tmp, c, 1);
-	return (tmp);
-}
-
-char	*ft_string(t_stru *stru)
-{
-	char	*tmp;
-
-	tmp = ft_strdup(va_arg(stru->va, char *));
-	return (tmp);
+	ft_putstr("\nAn error occured.\n");
+	if (error == -1)
+		free(stru);
+	if (error == -2)
+	{
+		ft_strdel(&(stru->format));
+		free(stru);
+	}
+	if (error == -3)
+	{
+		ft_strdel(&(stru->format));
+		ft_strdel(&(stru->output));
+		free(stru);
+	}
+	exit(0);
 }

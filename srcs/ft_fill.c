@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 15:46:42 by mabouce           #+#    #+#             */
-/*   Updated: 2019/01/25 13:57:15 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/03/05 18:55:04 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_fill_conv(t_stru *stru)
 {
-	int	i;
-	char *(*function[13])(t_stru *stru);
+	int		i;
+	char	*(*function[13])(t_stru *stru);
 
 	function[0] = ft_char;
 	function[1] = ft_string;
@@ -35,7 +35,7 @@ char	*ft_fill_text(t_stru *stru)
 {
 	stru->k = 0;
 	if (!(stru->tmp = (char *)malloc(sizeof(char) * (stru->i - stru->j + 1))))
-		ft_error_miniprintf();
+		ft_error_miniprintf(stru, -3);
 	while (stru->j < stru->i)
 	{
 		stru->tmp[stru->k] = stru->format[stru->j];
