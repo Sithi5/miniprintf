@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 13:57:45 by mabouce           #+#    #+#             */
-/*   Updated: 2019/03/05 18:55:03 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/03/10 14:24:03 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,15 @@ void	ft_read_format(t_stru *stru)
 	{
 		if (stru->format[stru->i] == '%')
 		{
-			stru->output = ft_strdjoind(stru->output, ft_fill_text(stru));
+			if (!(stru->output = ft_strdjoind(stru->output
+							, ft_fill_text(stru))))
+				ft_error_miniprintf(stru, -3);
 			while (stru->format[stru->i]
 					&& ft_is_conv(stru->format[stru->i], stru) != 1)
 				stru->i++;
-			stru->output = ft_strdjoind(stru->output, ft_fill_conv(stru));
+			if (!(stru->output = ft_strdjoind(stru->output
+							, ft_fill_conv(stru))))
+				ft_error_miniprintf(stru, -3);
 			stru->i++;
 			stru->j = stru->i;
 		}
