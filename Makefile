@@ -6,7 +6,7 @@
 #    By: mabouce <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/29 17:41:15 by mabouce           #+#    #+#              #
-#    Updated: 2019/03/27 11:46:46 by mabouce          ###   ########.fr        #
+#    Updated: 2019/03/05 15:23:30 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFTINCLUDES	=	../libft/includes
 LIBFT			=	../libft/
 INCLUDES		=	./includes/
 CC				=	gcc -Wall -Wextra -Werror
-.PHONY			:	all $(NAME) $(OBJ) clean fclean re
+.PHONY			=	all $(NAME) $(OBJ) clean fclean re
 
 SRCS_PATH		=	./srcs/
 

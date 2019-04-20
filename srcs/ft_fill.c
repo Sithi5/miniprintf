@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 15:46:42 by mabouce           #+#    #+#             */
-/*   Updated: 2019/03/10 14:24:05 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/18 16:34:41 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_fill_conv(t_stru *stru)
 	function[1] = ft_string;
 	function[2] = ft_int;
 	function[3] = ft_int;
+
 	i = 0;
 	while (stru->conv[i])
 	{
