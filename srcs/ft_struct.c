@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 17:38:29 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 19:15:02 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/20 19:59:51 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	ft_set_struct(t_s *s)
 		ft_error_miniprintf(s, -2);
 	s->width = 0;
 	s->conv = "csdi%";
+	s->width = 0;
 }

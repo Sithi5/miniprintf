@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 15:46:42 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 19:25:09 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/20 20:07:52 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_fill_conv(t_s *s)
 			break ;
 		i++;
 	}
-	return (function[i](s));
+	return (ft_set_width(s, function[i](s)));
 }
 
 char	*ft_fill_text(t_s *s)

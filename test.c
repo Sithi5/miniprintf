@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 17:16:47 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 19:24:29 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/20 19:47:09 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int		main(void)
 	miniprintf("mine : test UNDER RED :%% %% et ouai poto %%\n", "RED", "UNDER", "END");
 
 	miniprintf("\x1b[4mtest numero : %i\n\x1b[0m", i++);
-	miniprintf("mine : %215.2s\n", "bonjour");
-	printf("printf : %215.2s\n", "bonjour");
+	miniprintf("mine : %50s\n", "bonjour");
+	printf("prin : %50s\n", "bonjour");
 }
