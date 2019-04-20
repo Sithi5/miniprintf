@@ -6,18 +6,18 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 16:50:23 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/18 16:46:45 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/20 19:21:59 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-char	*ft_int(t_stru *stru)
+char	*ft_int(t_s *s)
 {
 	long long	i;
 	char		*tmp;
 
-	i = va_arg(stru->va, int);
+	i = va_arg(s->va, int);
 	tmp = ft_lltoa(i);
 	return (tmp);
 }

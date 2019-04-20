@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 15:47:22 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 17:56:00 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/20 19:15:08 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/20 19:15:34 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-void	ft_error_miniprintf(t_s *s, int error)
+void	ft_check_width(t_s *s)
 {
-	ft_putstr("An error occured in Miniprintf.\n");
-	if (error == -1)
-		free(s);
-	if (error == -2)
+	if (ft_isdigit(s->format[s->i]))
 	{
-		ft_strdel(&(s->format));
-		free(s);
+		s->width = ft_atoi(s->format + s->i);
+		while (ft_isdigit(s->format[s->i]))
+			s->i++;
+		ft_putnbr(s->width);
 	}
-	if (error == -3)
-	{
-		ft_strdel(&(s->format));
-		ft_strdel(&(s->output));
-		free(s);
-	}
-	exit(0);
+	else
+		s->i++;
 }

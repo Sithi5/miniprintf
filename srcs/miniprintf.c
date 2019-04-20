@@ -6,73 +6,67 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 13:57:45 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 17:15:28 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/20 19:24:13 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-int		ft_is_conv(char c, t_stru *stru)
+int		ft_is_conv(char c, t_s *s)
 {
 	int	i;
 
 	i = 0;
-	while (stru->conv[i])
+	while (s->conv[i])
 	{
-		if (c == stru->conv[i])
+		if (c == s->conv[i])
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-void	ft_read_format(t_stru *stru)
+void	ft_read_format(t_s *s)
 {
-	stru->i = -1;
-	stru->j = 0;
-	if (!(stru->output = ft_strnew(0)))
-		ft_error_miniprintf(stru, -2);
-	while (stru->format[++stru->i])
+	s->i = -1;
+	s->j = 0;
+	while (s->format[++s->i])
 	{
-		if (stru->format[stru->i] == '%')
+		if (s->format[s->i] == '%')
 		{
-			if (!(stru->output = ft_strdjoind(stru->output
-							, ft_fill_text(stru))))
-				ft_error_miniprintf(stru, -3);
-			while (stru->format[stru->i]
-					&& ft_is_conv(stru->format[stru->i], stru) != 1)
-				stru->i++;
-			if (!(stru->output = ft_strdjoind(stru->output
-							, ft_fill_conv(stru))))
-				ft_error_miniprintf(stru, -3);
-			stru->i++;
-			stru->j = stru->i;
+			if (!(s->output = ft_strdjoind(s->output
+							, ft_fill_text(s))))
+				ft_error_miniprintf(s, -3);
+			s->i++;
+			while (s->format[s->i]
+					&& ft_is_conv(s->format[s->i], s) != 1)
+				s->i++;
+			if (!(s->output = ft_strdjoind(s->output
+							, ft_fill_conv(s))))
+				ft_error_miniprintf(s, -3);
+			s->i++;
+			s->j = s->i;
 		}
 	}
-	if (!(stru->output = ft_strdjoind(stru->output, ft_fill_text(stru))))
-		ft_error_miniprintf(stru, -3);
-}
-
-void	ft_set_conv(t_stru *stru)
-{
-	stru->conv = "csdi";
+	if (!(s->output = ft_strdjoind(s->output, ft_fill_text(s))))
+		ft_error_miniprintf(s, -3);
 }
 
 int		miniprintf(const char *format, ...)
 {
-	t_stru		*stru;
+	t_s		*s;
 
-	if (!(stru = (t_stru *)malloc(sizeof(t_stru))))
-		ft_error_miniprintf(stru, 0);
-	ft_set_conv(stru);
-	va_start(stru->va, format);
-	if (!(stru->format = ft_strdup((char *)format)))
-		ft_error_miniprintf(stru, -1);
-	ft_read_format(stru);
-	ft_putstr(stru->output);
-	ft_strdel(&(stru->format));
-	ft_strdel(&(stru->output));
-	free(stru);
-	va_end(stru->va);
+	if (!(s = (t_s *)malloc(sizeof(t_s))))
+		ft_error_miniprintf(s, 0);
+	va_start(s->va, format);
+	if (!(s->format = ft_strdup((char *)format)))
+		ft_error_miniprintf(s, -1);
+	ft_set_struct(s);
+	ft_read_format(s);
+	ft_putstr(s->output);
+	ft_strdel(&(s->format));
+	ft_strdel(&(s->output));
+	free(s);
+	va_end(s->va);
 	return (0);
 }
