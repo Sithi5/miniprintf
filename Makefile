@@ -6,7 +6,7 @@
 #    By: mabouce <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/29 17:41:15 by mabouce           #+#    #+#              #
-#    Updated: 2019/04/20 19:15:44 by mabouce          ###   ########.fr        #
+#    Updated: 2019/04/21 15:10:41 by mabouce          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS_NAME		=	miniprintf.c			\
 					ft_diouxx.c				\
 					ft_struct.c				\
 					ft_width.c				\
+					ft_accu.c				\
 
 LIBFTINCLUDES	=	../libft/includes
 LIBFT			=	../libft/

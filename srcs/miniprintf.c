@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 13:57:45 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 20:07:15 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/21 15:34:29 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void	ft_read_format(t_s *s)
 							, ft_fill_text(s))))
 				ft_error_miniprintf(s, -3);
 			s->i++;
+			if (s->format[s->i] == '0')
+				s->zero_fill = 1;
 			ft_check_width(s);
+			ft_check_accu(s);
 			while (s->format[s->i]
 					&& ft_is_conv(s->format[s->i], s) != 1)
 				s->i++;
@@ -51,11 +54,6 @@ void	ft_read_format(t_s *s)
 	}
 	if (!(s->output = ft_strdjoind(s->output, ft_fill_text(s))))
 		ft_error_miniprintf(s, -3);
-}
-
-void	ft_set_conv(t_s *s)
-{
-	s->conv = "csdi";
 }
 
 int		miniprintf(const char *format, ...)
