@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/21 15:06:57 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/21 15:34:23 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:00:32 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:00:33 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-void	ft_check_accu(t_s *s)
+void	ft_check_accu(t_ms *s)
 {
 	if (s->format[s->i] && s->format[s->i] == '.')
 		s->i++;
@@ -26,10 +26,10 @@ void	ft_check_accu(t_s *s)
 	}
 }
 
-char	*ft_apply_accu(t_s *s, char *str)
+char	*ft_apply_accu(t_ms *s, char *str)
 {
-	int i;
-	char *result;
+	int		i;
+	char	*result;
 
 	if (s->accu)
 	{
@@ -39,7 +39,6 @@ char	*ft_apply_accu(t_s *s, char *str)
 			ft_error_miniprintf(s, -3);
 		}
 		i = 0;
-		ft_putstr(str);
 		while (s->accu-- > 0)
 		{
 			result[i] = str[i];
@@ -47,7 +46,6 @@ char	*ft_apply_accu(t_s *s, char *str)
 		}
 		result[i] = '\0';
 		ft_strdel(&str);
-		ft_putchar('\n');
 		return (result);
 	}
 	else

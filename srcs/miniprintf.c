@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 13:57:45 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/21 15:34:29 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:01:54 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:01:55 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-int		ft_is_conv(char c, t_s *s)
+int		ft_is_conv(char c, t_ms *s)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int		ft_is_conv(char c, t_s *s)
 	return (0);
 }
 
-void	ft_read_format(t_s *s)
+void	ft_read_format(t_ms *s)
 {
 	s->i = -1;
 	s->j = 0;
@@ -48,8 +48,7 @@ void	ft_read_format(t_s *s)
 			if (!(s->output = ft_strdjoind(s->output
 							, ft_fill_conv(s))))
 				ft_error_miniprintf(s, -3);
-			s->i++;
-			s->j = s->i;
+			s->j = ++s->i;
 		}
 	}
 	if (!(s->output = ft_strdjoind(s->output, ft_fill_text(s))))
@@ -58,14 +57,14 @@ void	ft_read_format(t_s *s)
 
 int		miniprintf(const char *format, ...)
 {
-	t_s		*s;
+	t_ms		*s;
 
-	if (!(s = (t_s *)malloc(sizeof(t_s))))
+	if (!(s = (t_ms *)malloc(sizeof(t_ms))))
 		ft_error_miniprintf(s, 0);
 	va_start(s->va, format);
 	if (!(s->format = ft_strdup((char *)format)))
 		ft_error_miniprintf(s, -1);
-	ft_set_struct(s);
+	ft_set_struct_mini(s);
 	ft_read_format(s);
 	ft_putstr(s->output);
 	ft_strdel(&(s->format));

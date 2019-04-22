@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 11:36:56 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 19:21:48 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:00:43 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:00:44 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-char	*ft_char(t_s *s)
+char	*ft_char(t_ms *s)
 {
 	char	c;
 	char	*tmp;
@@ -24,7 +24,7 @@ char	*ft_char(t_s *s)
 	return (tmp);
 }
 
-char	*ft_string(t_s *s)
+char	*ft_string(t_ms *s)
 {
 	char	*tmp;
 

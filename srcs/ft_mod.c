@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 18:10:08 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/21 15:48:32 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:01:21 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:01:22 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-char	*ft_mod(t_s *s)
+char	*ft_mod(t_ms *s)
 {
 	char *tmp;
 

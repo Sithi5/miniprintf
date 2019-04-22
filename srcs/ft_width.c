@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 19:15:08 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/21 15:29:17 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:01:46 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:01:47 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-void	ft_check_width(t_s *s)
+void	ft_check_width(t_ms *s)
 {
 	if (s->format[s->i] && ft_isdigit(s->format[s->i]))
 	{
@@ -22,7 +22,7 @@ void	ft_check_width(t_s *s)
 	}
 }
 
-void	ft_apply_width_zero(t_s *s)
+void	ft_apply_width_zero(t_ms *s)
 {
 	while (s->width > 0)
 	{
@@ -47,7 +47,7 @@ void	ft_apply_width_zero(t_s *s)
 	}
 }
 
-void	ft_apply_width_blanc(t_s *s)
+void	ft_apply_width_blanc(t_ms *s)
 {
 	while (s->width > 0)
 	{
@@ -72,7 +72,7 @@ void	ft_apply_width_blanc(t_s *s)
 	}
 }
 
-char	*ft_apply_width(t_s *s, char *str)
+char	*ft_apply_width(t_ms *s, char *str)
 {
 	int i;
 
@@ -88,7 +88,7 @@ char	*ft_apply_width(t_s *s, char *str)
 			s->width--;
 		i++;
 	}
-	if (s->zero_fill == 0 )
+	if (s->zero_fill == 0)
 		ft_apply_width_blanc(s);
 	else if (s->zero_fill == 1)
 		ft_apply_width_zero(s);

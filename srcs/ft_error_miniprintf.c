@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_error_miniprintf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 15:47:22 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/20 17:56:00 by mabouce          ###   ########.fr       */
+/*   Created: 2019/04/22 16:01:03 by mabouce           #+#    #+#             */
+/*   Updated: 2019/04/22 16:01:04 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniprintf.h"
 
-void	ft_error_miniprintf(t_s *s, int error)
+void	ft_error_miniprintf(t_ms *s, int error)
 {
 	ft_putstr("An error occured in Miniprintf.\n");
 	if (error == -1)
