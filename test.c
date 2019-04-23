@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 17:16:47 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/21 15:51:00 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/23 10:40:23 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		main(void)
 	miniprintf("mine : %05.1s\n", "bonjour");
 	printf("prin : %05.1s\n", "bonjour");
 
-	miniprintf("mine : %%yataaaaa%%\n", "RED", "END");
+	miniprintf("%i%i\n", -10, 2, "END");
+	miniprintf("mine : %%%i%iyataaaaa\n%%", "BLUE", -10, 2, "END");
 	miniprintf("mine : %%", "RED");
 }

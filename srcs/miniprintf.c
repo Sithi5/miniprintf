@@ -6,7 +6,7 @@
 /*   By: mabouce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 16:01:54 by mabouce           #+#    #+#             */
-/*   Updated: 2019/04/22 16:01:55 by mabouce          ###   ########.fr       */
+/*   Updated: 2019/04/23 10:39:31 by mabouce          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,12 @@ void	ft_read_format(t_ms *s)
 				s->zero_fill = 1;
 			ft_check_width(s);
 			ft_check_accu(s);
-			while (s->format[s->i]
-					&& ft_is_conv(s->format[s->i], s) != 1)
-				s->i++;
+			if (!ft_is_conv(s->format[s->i], s))
+				ft_error_miniprintf(s, -3);
 			if (!(s->output = ft_strdjoind(s->output
 							, ft_fill_conv(s))))
 				ft_error_miniprintf(s, -3);
-			s->j = ++s->i;
+			s->j = s->i + 1;
 		}
 	}
 	if (!(s->output = ft_strdjoind(s->output, ft_fill_text(s))))
